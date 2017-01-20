@@ -11,8 +11,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="kein.navihelper.MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:text="테헤란로 427"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_below="@id/edittext"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:text="Copy Clipboard"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

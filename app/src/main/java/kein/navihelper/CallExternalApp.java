@@ -1,5 +1,9 @@
 package kein.navihelper;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+
 /**
  * Created by kein on 2017. 1. 21..
  *
@@ -9,4 +13,16 @@ package kein.navihelper;
  */
 
 public class CallExternalApp {
+
+    public static void callDaumMap(Context ctx, String address) {
+        String url = "daummaps://search?q="+address;
+        callIntent(ctx, Uri.parse(url));
+    }
+
+
+    private static void callIntent(Context ctx, Uri uri) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        ctx.startActivity(intent);
+    }
+
 }

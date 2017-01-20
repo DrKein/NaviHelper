@@ -1,13 +1,12 @@
 package kein.navihelper.service;
 
 import android.app.Service;
-import android.content.ClipData;
-import android.content.ClipDescription;
 import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.widget.Toast;
+
+import kein.navihelper.ClipChangedListener;
 
 /**
  * Created by kein on 2017. 1. 21..
@@ -31,30 +30,11 @@ public class ClipboardListenerService extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-
     private void setClipboardListener() {
         ClipboardManager clipBoard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-        clipBoard.addPrimaryClipChangedListener(new ClipboardManager.OnPrimaryClipChangedListener() {
-            @Override
-            public void onPrimaryClipChanged() {
-                ClipboardManager clipBoard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-                if(checkClipboard(clipBoard)) {
-                    ClipData clip = clipBoard.getPrimaryClip();
-                    ClipData.Item item = clip.getItemAt(0);
-                    String text = item.getText().toString();
-                    Toast.makeText(ClipboardListenerService.this, text, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+        clipBoard.addPrimaryClipChangedListener(new ClipChangedListener(this));
     }
 
-    /** 클립보드 컨텐츠가 있는지, 텍스트 인지 */
-    private boolean checkClipboard(ClipboardManager cm) {
-        if(cm != null && cm.hasPrimaryClip() && cm.getPrimaryClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
-            return true;
-        }
-        return false;
-    }
+
 
 }

@@ -1,5 +1,7 @@
 package kein.navihelper;
 
+import android.content.Context;
+
 /**
  * Created by kein on 2017. 1. 21..
  *
@@ -7,5 +9,8 @@ package kein.navihelper;
  * (토스트는 Toss 의 그것같은..)
  */
 
-public class ShowMenuToast {
+public class ShowAppToast {
+    public static void show(Context ctx, String address) {
+
+    }
 }
