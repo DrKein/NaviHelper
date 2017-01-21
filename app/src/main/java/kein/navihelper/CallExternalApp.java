@@ -16,8 +16,8 @@ import android.net.Uri;
 
 public class CallExternalApp {
 
-    public static void callDaumMap(Context ctx, String address) {
-        String url = "daummaps://search?q="+address;
+    public static void callDaumMap(Context ctx, String query) {
+        String url = "daummaps://search?q=" + query;
         callIntent(ctx, Uri.parse(url));
     }
 

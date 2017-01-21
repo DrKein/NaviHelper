@@ -27,9 +27,7 @@ public class ClipChangedListener implements ClipboardManager.OnPrimaryClipChange
             String text = item.getText().toString();
 
             if(AddressDetector.isAddress(text)) {
-//                 ShowAppToast.show(mCtx, text);
-                CallExternalApp.callDaumMap(mCtx, text);
-
+                 ShowAppToast.show(mCtx, text);
             }
         }
     }
