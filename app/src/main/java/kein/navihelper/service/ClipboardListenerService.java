@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import kein.navihelper.ClipChangedListener;
+import kein.navihelper.tool.ClipChangedListener;
 
 /**
  * Created by kein on 2017. 1. 21..

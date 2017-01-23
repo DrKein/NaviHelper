@@ -1,4 +1,4 @@
-package kein.navihelper;
+package kein.navihelper.tool;
 
 import android.content.Context;
 import android.content.Intent;

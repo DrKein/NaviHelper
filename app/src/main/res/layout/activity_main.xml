@@ -14,7 +14,7 @@
     <EditText
         android:id="@+id/edittext"
         android:layout_width="match_parent"
-        android:text="테헤란로 427"
+        android:text="중구 세종대로 110"
         android:layout_height="wrap_content"/>
 
     <Button

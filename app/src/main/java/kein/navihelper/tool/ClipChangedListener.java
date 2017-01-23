@@ -1,4 +1,4 @@
-package kein.navihelper;
+package kein.navihelper.tool;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
@@ -27,7 +27,7 @@ public class ClipChangedListener implements ClipboardManager.OnPrimaryClipChange
             String text = item.getText().toString();
 
             if(AddressDetector.isAddress(text)) {
-                 ShowAppToast.show(mCtx, text);
+                 ShowMenuView.show(mCtx, text);
             }
         }
     }
